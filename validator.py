@@ -9,8 +9,9 @@ class Validator:
         self._initialize()
 
     def _initialize(self):
-        self.PATH = r"C:\Users\asus\Downloads\chromedriver_win32\chromedriver.exe"
-        self.bot = webdriver.Chrome(executable_path=self.PATH)
+        # self.PATH = r"C:\Users\asus\Downloads\chromedriver_win32\chromedriver.exe"
+        # self.bot = webdriver.Chrome(executable_path=self.PATH)
+        self.bot = webdriver.Chrome()
         self.bot.fullscreen_window()
 
     def access(self, imdb):
