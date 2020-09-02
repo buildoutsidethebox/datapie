@@ -7,9 +7,10 @@ class Validator:
 
     def __init__(self):
         self._initialize()
-    
+
     def _initialize(self):
-        self.bot = webdriver.Chrome()
+        self.PATH = r"C:\Users\asus\Downloads\chromedriver_win32\chromedriver.exe"
+        self.bot = webdriver.Chrome(executable_path=self.PATH)
         self.bot.fullscreen_window()
 
     def access(self, imdb):
@@ -22,7 +23,7 @@ class Validator:
         if cont == "":
             print("Moving to another IMDB!")
 
-    def get_imdb(self,csv):
+    def get_imdb(self, csv):
         # imdbs
         imdbs = []
         with open(csv, "r") as file:
@@ -40,12 +41,8 @@ class Validator:
 if __name__ == "__main__":
     imdb = Validator()
 
-    imdbs = imdb.get_imdb("peacocktv_front_2020.08.21_imdb.csv")
-    i = 332
+    imdbs = imdb.get_imdb("peacocktv_front_2020.08.16_imdb.csv")
+    i = 265
     while i < len(imdbs):
         imdb.access(imdbs[i])
         i += 1
-
-
-           
-
